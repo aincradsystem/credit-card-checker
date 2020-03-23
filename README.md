@@ -5,7 +5,7 @@ The owner of this Credit Card Checker Template is Reboot.
 # HOW TO USE
 1st You can use 000webhost or xampp to host your own checker.<br>
 2nd Open proxy.txt and add your own proxy.</br>
-PS: You can use public proxy but i suggest you use High Quality Premium Proxy to avoid ERROR or CVC_UNCHECKED. 
+PS: You can use public proxy but i suggest you use High Quality Premium Proxy to avoid ERROR or CVC_UNCHECKED.</br> 
 3rd After you add your own proxy click save then Happy Checking.
 
 # FAQ
@@ -18,6 +18,6 @@ Answer: Stripe 1 request is not accepting luminati right now so this checker is 
 4th Does this checker give CVV LIVES?<br>
 Answer: Yes, It gives CCN and CVV LIVES as long as you use good proxies.<br>
 
-<font color="red">SORRY FOR MY BAD ENGLISH</font><br>
+SORRY FOR MY BAD ENGLISH<br>
 
 Powered by [AINCRAD SYSTEM](https://www.messenger.com/t/2934773826651727)
