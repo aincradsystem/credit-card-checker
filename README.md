@@ -3,8 +3,8 @@ I am not the owner of this credit card checker template but the post inside the 
 The owner of this Credit Card Checker Template is Reboot.
 
 # HOW TO USE
-1st You can use 000webhost or xampp to host your own checker.
-2nd Open proxy.txt and add your own proxy.
+1st You can use 000webhost or xampp to host your own checker.<br>
+2nd Open proxy.txt and add your own proxy.</br>
 PS: You can use public proxy but i suggest you use High Quality Premium Proxy to avoid ERROR or CVC_UNCHECKED. 
 3rd After you add your own proxy click save then Happy Checking.
 
