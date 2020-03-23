@@ -18,4 +18,5 @@ Answer: Stripe 1 request is not accepting luminati right now so this checker is 
 4th Does this checker give CVV LIVES?<br>
 Answer: Yes, It gives CCN and CVV LIVES as long as you use good proxies.<br>
 
+<span class="badge badge-success">SORRY FOR MY BAD ENGLISH</span>
 Powered by [AINCRAD SYSTEM](https://www.messenger.com/t/2934773826651727)
